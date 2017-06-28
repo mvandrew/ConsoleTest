@@ -1,2 +1,8 @@
 language: csharp
 solution: ConsoleTest.sln
+before_install:
+  - sudo apt-get install nunit-console
+before_script:
+  - nuget restore ConsoleTest.sln
+after_script:
+  - nunit-console ConsoleUnit/bin/Release/ConsoleUnit.dll
